@@ -9,12 +9,13 @@ class LogIn extends StatelessWidget {
     return const Scaffold(
       body: Column(
         children: [
-          MyButton(
-            color: Colors.red,
-            text: "Hello",
+          SizedBox(
+            height: 60,
           ),
-          MyButton(color: Colors.black, text: "Sursn"),
-          MyButton(color: Colors.white, text: "ssw")
+          PreBuildTextField(
+              textinputtype: TextInputType.name,
+              border: InputBorder.none,
+              hinttext: "name"),
         ],
       ),
     );

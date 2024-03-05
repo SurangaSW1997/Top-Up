@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:topup/mainpages/login.dart';
 
 //login introo
 class LoginIntro extends StatelessWidget {
@@ -69,7 +70,12 @@ class LoginIntro extends StatelessWidget {
             child: Column(
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LogIn()),
+                    );
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(0, 87, 255, 1),
