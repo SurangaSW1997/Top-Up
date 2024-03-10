@@ -74,7 +74,7 @@ class LoginIntro extends StatelessWidget {
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => LogIn()),
+                      MaterialPageRoute(builder: (context) => const LogIn()),
                     );
                   },
                   child: Container(

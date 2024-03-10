@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:topup/mainpages/signup.dart';
 import 'package:topup/reusable.dart';
 
-class LogIn extends StatelessWidget {
+class LogIn extends StatefulWidget {
   const LogIn({super.key});
 
+  @override
+  State<LogIn> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
+  TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _passswordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -47,14 +54,18 @@ class LogIn extends StatelessWidget {
                           fontSize: 16),
                     ),
                   ),
-                  const PreBuildTextField(
-                      textinputtype: TextInputType.emailAddress,
-                      icon: Icons.alternate_email_outlined,
-                      hinttext: "email"),
+                  PreBuildTextField(
+                    textinputtype: TextInputType.emailAddress,
+                    icon: Icons.alternate_email_outlined,
+                    hinttext: "email",
+                    controller: _emailcontroller,
+                  ),
                   SizedBox(
                     height: height * .02,
                   ),
-                  const PasswordTextField(),
+                  PasswordTextField(
+                    controller: _passswordcontroller,
+                  ),
                   SizedBox(
                     height: height * .005,
                   ),

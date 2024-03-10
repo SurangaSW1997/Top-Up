@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:topup/mainpages/login.dart';
@@ -6,7 +7,10 @@ import 'package:topup/mainpages/signup.dart';
 import 'package:topup/mainpages/spalshscreen.dart';
 import 'package:topup/reusable.dart';
 
-void main(List<String> args) {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:topup/mainpages/loginintro.dart';
 
 //prebuild textfield
 
@@ -7,11 +6,13 @@ class PreBuildTextField extends StatelessWidget {
   final TextInputType textinputtype;
   final IconData icon;
   final String hinttext;
+  final TextEditingController controller;
   const PreBuildTextField({
     super.key,
     required this.textinputtype,
     required this.icon,
     required this.hinttext,
+    required this.controller,
   });
 
   @override
@@ -47,6 +48,7 @@ class PreBuildTextField extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(right: width * .13),
                 child: TextFormField(
+                  controller: controller,
                   cursorErrorColor: Colors.red,
                   cursorColor: Colors.white,
                   keyboardType: textinputtype,
@@ -72,7 +74,11 @@ class PreBuildTextField extends StatelessWidget {
 //prebuild password text field
 
 class PasswordTextField extends StatefulWidget {
-  const PasswordTextField({super.key});
+  final TextEditingController controller;
+  const PasswordTextField({
+    super.key,
+    required this.controller,
+  });
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();

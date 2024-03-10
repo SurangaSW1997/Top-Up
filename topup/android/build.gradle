@@ -1,3 +1,20 @@
+buildscript {
+    repositories {
+        google()
+        // Other repositories
+    }
+    dependencies {
+        // Dependencies for the build script
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23"
+    }
+}
+
+plugins {
+
+  id 'com.google.gms.google-services' version '4.4.1' apply false
+
+}
+
 allprojects {
     repositories {
         google()
@@ -16,3 +33,4 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
