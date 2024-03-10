@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:topup/mainpages/login.dart';
+import 'package:topup/mainpages/signup.dart';
 
 //login introo
 class LoginIntro extends StatelessWidget {
@@ -97,7 +98,14 @@ class LoginIntro extends StatelessWidget {
                   height: height * .01,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUp(),
+                      ),
+                    );
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,

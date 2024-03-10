@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:topup/mainpages/loginintro.dart';
+import 'package:topup/mainpages/signup.dart';
 import 'package:topup/reusable.dart';
 
 class LogIn extends StatelessWidget {
@@ -30,11 +28,11 @@ class LogIn extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     height: height * .06,
-                    child: const Text(
+                    child: Text(
                       "Welcome Back",
                       style: TextStyle(
                           fontFamily: 'Lucida Sans',
-                          fontSize: 40,
+                          fontSize: height * .04,
                           color: Colors.white),
                     ),
                   ),
@@ -71,7 +69,7 @@ class LogIn extends StatelessWidget {
                         style: TextStyle(
                             color: Color.fromRGBO(0, 87, 255, 1),
                             fontFamily: 'Lucida Sans',
-                            fontSize: 16),
+                            fontSize: 14),
                       ),
                     ),
                   ),
@@ -87,7 +85,7 @@ class LogIn extends StatelessWidget {
                   SizedBox(
                     height: height * .435,
                   ),
-                  Container(
+                  SizedBox(
                     height: height * .05,
                     width: width * .9,
                     child: Row(
@@ -101,7 +99,14 @@ class LogIn extends StatelessWidget {
                               color: Colors.white),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignUp(),
+                              ),
+                            );
+                          },
                           child: const Text(
                             " Sign Up",
                             style: TextStyle(

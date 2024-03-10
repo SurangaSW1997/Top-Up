@@ -57,7 +57,7 @@ class PreBuildTextField extends StatelessWidget {
                           color: Color.fromARGB(255, 209, 207, 207))),
                   style: const TextStyle(
                       fontFamily: 'Lucida Sans',
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.white),
                 ),
               ),
@@ -124,7 +124,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
                           TextStyle(color: Color.fromARGB(255, 209, 207, 207))),
                   style: const TextStyle(
                     fontFamily: 'Lucida Sans',
-                    fontSize: 16,
+                    fontSize: 14,
                     color: Colors.white,
                   ),
                 ),
