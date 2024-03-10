@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-
-
-
-
+import 'package:topup/mainpages/loginintro.dart';
 
 //prebuild textfield
 
@@ -35,7 +31,7 @@ class PreBuildTextField extends StatelessWidget {
             alignment: Alignment.center,
             width: width * .15,
             child: Opacity(
-              opacity: .8,
+              opacity: .6,
               child: Icon(
                 icon,
                 size: 20,
@@ -57,11 +53,12 @@ class PreBuildTextField extends StatelessWidget {
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: hinttext,
-                      hintStyle: const TextStyle(color: Colors.white)),
+                      hintStyle: const TextStyle(
+                          color: Color.fromARGB(255, 209, 207, 207))),
                   style: const TextStyle(
                       fontFamily: 'Lucida Sans',
                       fontSize: 16,
-                      color: Color.fromARGB(255, 255, 255, 255)),
+                      color: Colors.white),
                 ),
               ),
             ),
@@ -71,11 +68,6 @@ class PreBuildTextField extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
 
 //prebuild password text field
 
@@ -95,7 +87,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     final height = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 109, 108, 108),
+          color: const Color.fromARGB(255, 109, 108, 108),
           borderRadius: BorderRadius.circular(20)),
       width: width * .9,
       height: height * .06,
@@ -117,16 +109,19 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             alignment: Alignment.centerLeft,
             width: width * .65,
             child: Opacity(
-              opacity: .6,
+              opacity: .8,
               child: Padding(
                 padding: EdgeInsets.only(right: width * .03),
                 child: TextFormField(
+                  cursorErrorColor: Colors.red,
+                  cursorColor: Colors.white,
                   obscureText: _obscureText,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: "password",
-                      hintStyle: TextStyle(color: Colors.white)),
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 209, 207, 207))),
                   style: const TextStyle(
                     fontFamily: 'Lucida Sans',
                     fontSize: 16,
@@ -154,6 +149,43 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
                 )),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class PreBuildButton extends StatelessWidget {
+  final double customwidth;
+  final double customheight;
+  final GestureTapCallback ontapp;
+  final String buttonText;
+  const PreBuildButton(
+      {super.key,
+      required this.customheight,
+      required this.customwidth,
+      required this.ontapp,
+      required this.buttonText});
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
+    return GestureDetector(
+      onTap: ontapp,
+      child: Container(
+        decoration: BoxDecoration(
+            color: const Color.fromRGBO(0, 87, 255, 1),
+            borderRadius: BorderRadius.circular(20)),
+        width: width * customwidth,
+        height: height * customheight,
+        child: Center(
+          child: Text(
+            buttonText,
+            style: const TextStyle(
+                fontSize: 16, fontFamily: 'Lora', color: Colors.white),
+          ),
+        ),
       ),
     );
   }

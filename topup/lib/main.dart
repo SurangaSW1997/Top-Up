@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:topup/mainpages/login.dart';
 import 'package:topup/mainpages/loginintro.dart';
+import 'package:topup/mainpages/signup.dart';
 import 'package:topup/mainpages/spalshscreen.dart';
 import 'package:topup/reusable.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: SignUp(),
     );
   }
 }
